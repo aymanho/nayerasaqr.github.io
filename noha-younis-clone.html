@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noha Younis | Professional Bilingual Voice Over Artist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e2c97e;
+      --dark: #0d0d0d;
+      --dark2: #141414;
+      --dark3: #1c1c1c;
+      --dark4: #252525;
+      --text: #e8e8e8;
+      --muted: #888;
+      --border: rgba(201,168,76,0.18);
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--dark); color: var(--text); font-family: var(--font-body); line-height: 1.6; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+      background: rgba(13,13,13,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%; height: 68px;
+    }
+    .nav-logo { font-family: var(--font-display); font-size: 1.3rem; color: var(--gold); text-decoration: none; font-weight: 700; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--text); text-decoration: none; font-size: .875rem; letter-spacing: .04em; transition: color .2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold); color: var(--dark); padding: .45rem 1.2rem;
+      border-radius: 2px; font-size: .875rem; font-weight: 600; text-decoration: none;
+      transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+    .lang-switch { display: flex; gap: .6rem; font-size: .8rem; }
+    .lang-switch a { color: var(--muted); text-decoration: none; padding: .2rem .5rem; border: 1px solid var(--border); border-radius: 2px; transition: .2s; }
+    .lang-switch a:hover { color: var(--gold); border-color: var(--gold); }
+
+    /* ─── HERO ─── */
+    #home {
+      min-height: 100vh; display: flex; align-items: center; padding: 0 6%;
+      padding-top: 68px; position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,.07) 0%, transparent 65%),
+                  radial-gradient(ellipse at 20% 80%, rgba(201,168,76,.04) 0%, transparent 50%);
+    }
+    .hero-content { flex: 1; z-index: 1; max-width: 580px; }
+    .hero-eyebrow { font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+    .hero-title { font-family: var(--font-display); font-size: clamp(2.8rem,5vw,4.2rem); line-height: 1.12; font-weight: 700; color: #fff; margin-bottom: 1.4rem; }
+    .hero-title span { color: var(--gold); }
+    .hero-desc { color: var(--muted); font-size: 1.05rem; line-height: 1.75; margin-bottom: 2rem; max-width: 480px; }
+    .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--gold); color: var(--dark); padding: .75rem 1.8rem;
+      border-radius: 2px; font-weight: 600; text-decoration: none; font-size: .9rem;
+      transition: background .2s;
+    }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-outline {
+      border: 1px solid var(--gold); color: var(--gold); padding: .75rem 1.8rem;
+      border-radius: 2px; font-weight: 600; text-decoration: none; font-size: .9rem;
+      transition: .2s;
+    }
+    .btn-outline:hover { background: rgba(201,168,76,.08); }
+    .hero-image {
+      flex: 0 0 420px; z-index: 1; position: relative;
+    }
+    .hero-image img {
+      width: 380px; height: 480px; object-fit: cover; border-radius: 4px;
+      border: 1px solid var(--border);
+      filter: grayscale(15%);
+      box-shadow: 0 40px 80px rgba(0,0,0,.6);
+    }
+    .hero-image::before {
+      content: ''; position: absolute; top: -16px; left: -16px;
+      width: 100%; height: 100%;
+      border: 1px solid rgba(201,168,76,.25); border-radius: 4px;
+    }
+    .scroll-hint { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); font-size: .72rem; letter-spacing: .15em; color: var(--muted); text-transform: uppercase; text-align: center; }
+    .scroll-hint::after { content: ''; display: block; width: 1px; height: 40px; background: var(--gold); margin: .6rem auto 0; animation: scrollPulse 1.8s ease-in-out infinite; }
+    @keyframes scrollPulse { 0%,100%{opacity:.2;transform:scaleY(1)} 50%{opacity:1;transform:scaleY(1.3)} }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 5.5rem 6%; }
+    .section-eyebrow { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: .8rem; }
+    .section-title { font-family: var(--font-display); font-size: clamp(2rem,3.5vw,2.8rem); color: #fff; margin-bottom: 1.2rem; }
+    .section-desc { color: var(--muted); max-width: 560px; line-height: 1.75; margin-bottom: 3rem; }
+    .divider { width: 48px; height: 2px; background: var(--gold); margin-bottom: 2rem; }
+
+    /* ─── DEMOS ─── */
+    #demos { background: var(--dark2); }
+    .filter-row { display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .filter-btn {
+      padding: .4rem 1.1rem; border: 1px solid var(--border); border-radius: 2px;
+      background: transparent; color: var(--muted); font-size: .8rem; cursor: pointer;
+      letter-spacing: .05em; transition: .2s;
+    }
+    .filter-btn.active, .filter-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,.06); }
+    .style-row { display: flex; gap: .6rem; margin-bottom: 2.5rem; flex-wrap: wrap; align-items: center; }
+    .style-label { font-size: .78rem; color: var(--muted); margin-right: .3rem; letter-spacing: .06em; }
+    .demo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap: 1.2rem; }
+
+    .demo-card {
+      background: var(--dark3); border: 1px solid var(--border); border-radius: 4px;
+      padding: 1.4rem; transition: border-color .2s, transform .2s;
+    }
+    .demo-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+    .demo-tag { display: inline-block; background: rgba(201,168,76,.12); color: var(--gold); font-size: .7rem; padding: .2rem .6rem; border-radius: 2px; letter-spacing: .07em; margin-bottom: .8rem; }
+    .demo-title { font-family: var(--font-display); font-size: 1.1rem; color: #fff; margin-bottom: .3rem; }
+    .demo-desc { font-size: .8rem; color: var(--muted); margin-bottom: 1rem; }
+    .audio-player { width: 100%; }
+    audio { width: 100%; height: 36px; }
+    audio::-webkit-media-controls-panel { background: var(--dark4); }
+    .script-toggle { margin-top: .8rem; background: none; border: none; color: var(--gold); font-size: .78rem; cursor: pointer; padding: 0; letter-spacing: .06em; text-decoration: underline; text-underline-offset: 3px; }
+    .script-content { display: none; margin-top: .8rem; padding: .8rem; background: var(--dark4); border-left: 2px solid var(--gold); font-size: .82rem; color: var(--muted); line-height: 1.7; border-radius: 0 2px 2px 0; direction: rtl; text-align: right; }
+    .script-content.en { direction: ltr; text-align: left; }
+    .script-content.open { display: block; }
+
+    /* ─── ABOUT ─── */
+    #about { display: flex; gap: 5rem; align-items: center; flex-wrap: wrap; }
+    .about-image { flex: 0 0 340px; position: relative; }
+    .about-image img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 4px; filter: grayscale(10%); }
+    .about-badge {
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      background: var(--gold); color: var(--dark);
+      padding: 1rem 1.2rem; text-align: center; border-radius: 2px;
+    }
+    .about-badge strong { display: block; font-size: 1.8rem; font-weight: 700; line-height: 1; }
+    .about-badge span { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+    .about-content { flex: 1; min-width: 280px; }
+    .about-content p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+    .skills-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.5rem 0; }
+    .chip { padding: .35rem .9rem; border: 1px solid var(--border); border-radius: 2px; font-size: .78rem; color: var(--text); letter-spacing: .06em; }
+
+    /* ─── SERVICES ─── */
+    #services { background: var(--dark2); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 1.2rem; }
+    .service-card {
+      background: var(--dark3); border: 1px solid var(--border); border-radius: 4px;
+      padding: 1.8rem; transition: .2s;
+    }
+    .service-card:hover { border-color: var(--gold); }
+    .service-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .service-card h3 { font-family: var(--font-display); font-size: 1.1rem; color: #fff; margin-bottom: .6rem; }
+    .service-card p { font-size: .85rem; color: var(--muted); line-height: 1.7; }
+
+    /* ─── STUDIO ─── */
+    #studio { text-align: center; }
+    #studio .section-title, #studio .section-desc { margin-left: auto; margin-right: auto; }
+    #studio .divider { margin-left: auto; margin-right: auto; }
+    .studio-features { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+    .studio-feat { display: flex; align-items: center; gap: .6rem; padding: .7rem 1.2rem; border: 1px solid var(--border); border-radius: 2px; font-size: .85rem; color: var(--text); }
+    .studio-feat::before { content: '✓'; color: var(--gold); font-weight: 700; }
+    .studio-label { display: inline-block; margin-top: 2rem; background: rgba(201,168,76,.1); color: var(--gold); padding: .5rem 1.4rem; border-radius: 2px; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
+
+    /* ─── CONTACT ─── */
+    #contact { display: flex; gap: 5rem; flex-wrap: wrap; align-items: flex-start; }
+    .contact-info { flex: 1; min-width: 260px; }
+    .contact-detail { display: flex; flex-direction: column; margin-bottom: 1.6rem; }
+    .contact-detail strong { font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: .3rem; }
+    .contact-detail a, .contact-detail span { color: var(--text); text-decoration: none; font-size: .95rem; }
+    .contact-detail a:hover { color: var(--gold); }
+    .social-links { display: flex; gap: .8rem; margin-top: 1.5rem; }
+    .social-link {
+      width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: .9rem; text-decoration: none; transition: .2s;
+    }
+    .social-link:hover { border-color: var(--gold); color: var(--gold); }
+    .contact-form { flex: 1; min-width: 280px; }
+    .contact-form h3 { font-family: var(--font-display); font-size: 1.4rem; color: #fff; margin-bottom: 1.4rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; margin-bottom: 1rem; }
+    .form-group label { font-size: .75rem; color: var(--muted); margin-bottom: .4rem; letter-spacing: .06em; }
+    .form-group input, .form-group select, .form-group textarea {
+      background: var(--dark3); border: 1px solid var(--border); border-radius: 2px;
+      padding: .75rem 1rem; color: var(--text); font-family: var(--font-body); font-size: .9rem;
+      transition: border-color .2s; outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+    .form-group select option { background: var(--dark3); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .btn-submit {
+      width: 100%; background: var(--gold); color: var(--dark); padding: .85rem;
+      border: none; border-radius: 2px; font-weight: 600; font-size: .95rem;
+      cursor: pointer; letter-spacing: .05em; transition: background .2s;
+    }
+    .btn-submit:hover { background: var(--gold-light); }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--dark2); border-top: 1px solid var(--border); padding: 3.5rem 6% 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
+    .footer-brand p { color: var(--muted); font-size: .85rem; line-height: 1.7; margin-top: .8rem; max-width: 280px; }
+    footer h4 { font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    footer ul { list-style: none; }
+    footer ul li { margin-bottom: .5rem; }
+    footer ul li a { color: var(--muted); text-decoration: none; font-size: .85rem; transition: color .2s; }
+    footer ul li a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; text-align: center; font-size: .8rem; color: var(--muted); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      nav { padding: 0 4%; }
+      .nav-links { display: none; }
+      #home { flex-direction: column; padding-top: 90px; text-align: center; gap: 2.5rem; }
+      .hero-image { flex: none; }
+      .hero-image img { width: 260px; height: 320px; }
+      .hero-image::before { display: none; }
+      .btn-row { justify-content: center; }
+      #about { flex-direction: column; padding: 3.5rem 5%; gap: 3rem; }
+      .about-image { flex: none; width: 260px; }
+      .about-badge { right: 0; bottom: -1rem; }
+      #contact { flex-direction: column; padding: 3.5rem 5%; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      section { padding: 4rem 5%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#home">Noha Younis</a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#demos">Demos</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <div class="lang-switch">
+      <a href="#">EN</a>
+      <a href="#">ع</a>
+    </div>
+    <a class="nav-cta" href="#contact">Hire Me</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Professional Bilingual Voice Over Artist</p>
+    <h1 class="hero-title">Bringing Your <span>Stories</span> to Life</h1>
+    <p class="hero-desc">Bilingual Arabic–English Voice-Over Artist delivering expressive, high-quality recordings for commercials, narration, dubbing, and IVR. Let my voice be the unique signature sound that elevates your brand.</p>
+    <div class="btn-row">
+      <a class="btn-primary" href="#demos">Listen to Demos</a>
+      <a class="btn-outline" href="#contact">Get a Quote</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="https://nohayounis.github.io/Photos/Noha_Photo.jpg" alt="Noha Younis - Voice Over Artist" />
+  </div>
+  <p class="scroll-hint">Scroll Down</p>
+</section>
+
+<!-- DEMOS -->
+<section id="demos">
+  <p class="section-eyebrow">Voice Samples</p>
+  <h2 class="section-title">Listen to My Demos</h2>
+  <div class="divider"></div>
+  <p class="section-desc">Explore a variety of voice samples showcasing my versatility across different genres and styles in both Arabic and English.</p>
+
+  <div class="filter-row">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Arabic</button>
+    <button class="filter-btn">English</button>
+  </div>
+  <div class="style-row">
+    <span class="style-label">Audio Style:</span>
+    <button class="filter-btn active">With Music</button>
+    <button class="filter-btn">Clear Voice</button>
+  </div>
+
+  <div class="demo-grid">
+
+    <div class="demo-card">
+      <span class="demo-tag">Arabic</span>
+      <h3 class="demo-title">Commercial – Engez Lee App</h3>
+      <p class="demo-desc">Dynamic and energetic advertising voice for a mobile app</p>
+      <audio controls class="audio-player"><source src="" type="audio/mpeg"></audio>
+      <button class="script-toggle" onclick="toggleScript(this)">View Script</button>
+      <div class="script-content">إيه رأيك تعمل كل حاجة من موبايلك… من غير زحمة، ومن غير لف ودوران؟ مع أبلكيشن انجزلي، حياتك بقت أسهل بكتير!</div>
+    </div>
+
+    <div class="demo-card">
+      <span class="demo-tag">Arabic</span>
+      <h3 class="demo-title">IVR – Bank Phone System</h3>
+      <p class="demo-desc">Professional banking IVR with warm, trustworthy tone</p>
+      <audio controls class="audio-player"><source src="" type="audio/mpeg"></audio>
+      <button class="script-toggle" onclick="toggleScript(this)">View Script</button>
+      <div class="script-content">مرحبًا بيك في بنك مصر. لخدمتِك بشكل أفضل… من فضلك اختار من القائمة التالية.</div>
+    </div>
+
+    <div class="demo-card">
+      <span class="demo-tag">English</span>
+      <h3 class="demo-title">IVR – Customer Service</h3>
+      <p class="demo-desc">Clear and professional English telephone prompts</p>
+      <audio controls class="audio-player"><source src="" type="audio/mpeg"></audio>
+      <button class="script-toggle" onclick="toggleScript(this)">View Script</button>
+      <div class="script-content en">To ensure our service quality, kindly note that this call might be recorded. For residential, press 1. For commercial or administrative properties, press 2.</div>
+    </div>
+
+    <div class="demo-card">
+      <span class="demo-tag">Arabic</span>
+      <h3 class="demo-title">Audiobook Narration</h3>
+      <p class="demo-desc">Engaging storytelling with captivating narrative style</p>
+      <audio controls class="audio-player"><source src="" type="audio/mpeg"></audio>
+      <button class="script-toggle" onclick="toggleScript(this)">View Script</button>
+      <div class="script-content">في عالم يمتلئ بالأسرار، حيث تختبئ الحقيقة خلف طبقات من الغموض… نبدأ رحلة تكشف ما لم يُكشف من قبل.</div>
+    </div>
+
+    <div class="demo-card">
+      <span class="demo-tag">Arabic</span>
+      <h3 class="demo-title">Children's Story</h3>
+      <p class="demo-desc">Fun and engaging voice for kids' programs</p>
+      <audio controls class="audio-player"><source src="" type="audio/mpeg"></audio>
+      <button class="script-toggle" onclick="toggleScript(this)">View Script</button>
+      <div class="script-content">في صباح يوم مشمس، استيقظ الأرنب فُلفُل من نومه، وقفز خارج الجحر يبحث عن الجزر الطازج.</div>
+    </div>
+
+    <div class="demo-card">
+      <span class="demo-tag">Arabic</span>
+      <h3 class="demo-title">Documentary Narration</h3>
+      <p class="demo-desc">Professional narration for documentaries and corporate videos</p>
+      <audio controls class="audio-player"><source src="" type="audio/mpeg"></audio>
+      <button class="script-toggle" onclick="toggleScript(this)">View Script</button>
+      <div class="script-content">في عصر تسارعت فيه الابتكارات، لم تعد التكنولوجيا مجرد أدوات، بل أصبحت رفيقًا يوميًا يشكّل طريقة عيشنا.</div>
+    </div>
+
+    <div class="demo-card">
+      <span class="demo-tag">Arabic</span>
+      <h3 class="demo-title">Character Dubbing</h3>
+      <p class="demo-desc">Expressive character voice with emotional depth</p>
+      <audio controls class="audio-player"><source src="" type="audio/mpeg"></audio>
+      <button class="script-toggle" onclick="toggleScript(this)">View Script</button>
+      <div class="script-content">صراحة؟ النهارده كان يوم بايخ بمعنى الكلمة. صحيت متأخر، واتفاجئت إن الميّه قاطعة.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-image">
+    <img src="https://nohayounis.github.io/Photos/Noha_Photo.jpg" alt="Noha Younis" />
+    <div class="about-badge">
+      <strong>1+</strong>
+      <span>Year Experience</span>
+    </div>
+  </div>
+  <div class="about-content">
+    <p class="section-eyebrow">About Me</p>
+    <h2 class="section-title">Hello, I'm Noha Younis</h2>
+    <div class="divider"></div>
+    <p>I'm a bilingual Arabic–English Voice-Over Artist delivering expressive, high-quality recordings for commercials, narration, dubbing, and IVR. I combine clear delivery, emotional depth, and professional audio production to give every script a unique signature sound that elevates the brand.</p>
+    <p>With strong communication, reliable turnaround, and the ability to interpret both creative and corporate scripts, I make the recording process smooth and enjoyable — helping clients achieve the message and tone they envision.</p>
+    <p>If you're looking for a versatile female voice with a polished and memorable presence, I'd be happy to bring your project to life.</p>
+    <div class="skills-chips">
+      <span class="chip">Commercials</span>
+      <span class="chip">Audiobooks</span>
+      <span class="chip">IVR Systems</span>
+      <span class="chip">Dubbing</span>
+      <span class="chip">E-Learning</span>
+      <span class="chip">Corporate</span>
+    </div>
+    <a class="btn-primary" href="#contact">Let's Work Together</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <p class="section-eyebrow">What I Offer</p>
+  <h2 class="section-title">Professional Voice Over Services</h2>
+  <div class="divider"></div>
+  <p class="section-desc">From broadcast commercials to intimate audiobook narrations, I deliver high-quality voice recordings tailored to your specific needs in both Arabic and English.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">📺</div>
+      <h3>TV & Radio Commercials</h3>
+      <p>Compelling voice performances that capture attention and drive results for your advertising campaigns.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📖</div>
+      <h3>Audiobook Narration</h3>
+      <p>Engaging storytelling that brings characters and narratives to life for listeners worldwide.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📞</div>
+      <h3>IVR & Phone Systems</h3>
+      <p>Professional, clear voice prompts that enhance your customer's phone experience.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎬</div>
+      <h3>Dubbing & Animation</h3>
+      <p>Character voices and dubbing that bring animated stories and video content to life.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎓</div>
+      <h3>E-Learning & Training</h3>
+      <p>Clear, articulate narration that makes educational content engaging and accessible.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏢</div>
+      <h3>Corporate Videos</h3>
+      <p>Professional voice overs for company presentations, promotional videos, and internal communications.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO -->
+<section id="studio">
+  <p class="section-eyebrow">Recording Quality</p>
+  <h2 class="section-title">Professional Studio Recording</h2>
+  <div class="divider"></div>
+  <p class="section-desc">I record all voice-over projects in fully equipped professional studios, ensuring broadcast-quality audio that meets the highest industry standards. Working with experienced sound engineers and state-of-the-art equipment guarantees crystal-clear recordings with perfect acoustics.</p>
+  <div class="studio-features">
+    <div class="studio-feat">Broadcast-Quality Audio</div>
+    <div class="studio-feat">Professional Sound Engineering</div>
+    <div class="studio-feat">State-of-the-Art Equipment</div>
+    <div class="studio-feat">Acoustically Treated Studios</div>
+    <div class="studio-feat">Fast Turnaround Times</div>
+    <div class="studio-feat">Multiple Format Delivery</div>
+  </div>
+  <div><span class="studio-label">Pro Studio</span></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-info">
+    <p class="section-eyebrow">Get in Touch</p>
+    <h2 class="section-title">Let's Create Something Amazing</h2>
+    <div class="divider"></div>
+    <p style="color:var(--muted);line-height:1.75;margin-bottom:2rem;">Ready to bring your project to life? Whether you need a quick quote or want to discuss a complex project, I'm here to help. Reach out and let's make your vision a reality.</p>
+
+    <div class="contact-detail">
+      <strong>Email</strong>
+      <a href="mailto:nohayounis1681@gmail.com">nohayounis1681@gmail.com</a>
+    </div>
+    <div class="contact-detail">
+      <strong>Phone</strong>
+      <a href="tel:+201021027944">(+20) 102 102 7944</a>
+    </div>
+    <div class="contact-detail">
+      <strong>Location</strong>
+      <span>Cairo, Egypt</span>
+    </div>
+
+    <div class="social-links">
+      <a class="social-link" href="https://www.linkedin.com/in/noha-younis-voice-over/" target="_blank" title="LinkedIn">in</a>
+      <a class="social-link" href="https://www.facebook.com/profile.php?id=100071080595580" target="_blank" title="Facebook">f</a>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <h3>Request a Quote</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="Your Name" />
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="Email Address" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Phone Number (Optional)</label>
+      <input type="tel" placeholder="Phone Number" />
+    </div>
+    <div class="form-group">
+      <label>Project Type</label>
+      <select>
+        <option value="">Select Project Type</option>
+        <option>TV/Radio Commercial</option>
+        <option>Audiobook</option>
+        <option>IVR/Phone System</option>
+        <option>Dubbing</option>
+        <option>E-Learning</option>
+        <option>Corporate Video</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Project Details</label>
+      <textarea placeholder="Tell me about your project…"></textarea>
+    </div>
+    <button class="btn-submit">Send Message</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="nav-logo" href="#home">Noha Younis</a>
+      <p>Professional Bilingual Arabic-English Voice Over Artist bringing your stories to life with warmth and authenticity.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#demos">Demos</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Commercials</a></li>
+        <li><a href="#services">Audiobooks</a></li>
+        <li><a href="#services">IVR Systems</a></li>
+        <li><a href="#services">Dubbing</a></li>
+        <li><a href="#services">E-Learning</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Noha Younis. All Rights Reserved.</div>
+</footer>
+
+<script>
+  function toggleScript(btn) {
+    const box = btn.nextElementSibling;
+    box.classList.toggle('open');
+    btn.textContent = box.classList.contains('open') ? 'Hide Script' : 'View Script';
+  }
+
+  // Filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const parent = this.parentElement;
+      parent.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
+    });
+  });
+</script>
+</body>
+</html>
