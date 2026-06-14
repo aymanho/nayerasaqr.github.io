@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice Artist Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <div class="logo">Voice Artist</div>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#demos">Demos</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container hero-content">
+    <div>
+      <h1>Professional Voice Over Artist</h1>
+      <p>
+        Bringing stories, brands, and characters to life with
+        expressive and authentic voice performances.
+      </p>
+
+      <a href="#demos" class="btn">Listen to Demos</a>
+    </div>
+
+    <div class="hero-card">
+      <img
+        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=700"
+        alt="Voice Artist"
+      />
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <h2>About Me</h2>
+
+    <p class="lead">
+      I specialize in commercial, narration, e-learning,
+      and character voice work. With a professional recording setup
+      and fast turnaround times, I help clients create memorable audio experiences.
+    </p>
+  </div>
+</section>
+
+<section id="demos" class="section alt">
+  <div class="container">
+    <h2>Voice Demos</h2>
+
+    <div class="demo-grid">
+
+      <div class="demo-card">
+        <h3>Commercial</h3>
+        <audio controls>
+          <source src="audio/commercial.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <div class="demo-card">
+        <h3>Narration</h3>
+        <audio controls>
+          <source src="audio/narration.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <div class="demo-card">
+        <h3>Character</h3>
+        <audio controls>
+          <source src="audio/character.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="container">
+    <h2>Services</h2>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h3>Commercial VO</h3>
+        <p>Radio, TV, social media and online advertising.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>E-Learning</h3>
+        <p>Professional training and educational narration.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Audiobooks</h3>
+        <p>Clear and engaging storytelling performances.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Character Voices</h3>
+        <p>Animation, games, and creative productions.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section alt">
+  <div class="container">
+    <h2>Contact</h2>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea rows="6" placeholder="Project Details"></textarea>
+
+      <button type="submit" class="btn">
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Voice Artist Portfolio</p>
+  </div>
+</footer>
+
+</body>
+</html>
