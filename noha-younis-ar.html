@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>نهى يونس | فنانة تعليق صوتي محترفة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e2c97e;
+      --dark: #0d0d0d;
+      --dark2: #141414;
+      --dark3: #1c1c1c;
+      --dark4: #252525;
+      --text: #e8e8e8;
+      --muted: #888;
+      --border: rgba(201,168,76,0.18);
+      --font: 'Cairo', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--dark); color: var(--text); font-family: var(--font); line-height: 1.7; direction: rtl; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; right: 0; width: 100%; z-index: 100;
+      background: rgba(13,13,13,0.93); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%; height: 68px;
+    }
+    .nav-logo { font-family: var(--font); font-size: 1.3rem; color: var(--gold); text-decoration: none; font-weight: 700; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; flex-direction: row-reverse; }
+    .nav-links a { color: var(--text); text-decoration: none; font-size: .9rem; transition: color .2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold); color: var(--dark); padding: .45rem 1.2rem;
+      border-radius: 2px; font-size: .875rem; font-weight: 700; text-decoration: none;
+      transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+    .lang-switch { display: flex; gap: .6rem; font-size: .8rem; }
+    .lang-switch a { color: var(--muted); text-decoration: none; padding: .2rem .5rem; border: 1px solid var(--border); border-radius: 2px; transition: .2s; }
+    .lang-switch a:hover { color: var(--gold); border-color: var(--gold); }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+
+    /* ─── HERO ─── */
+    #home {
+      min-height: 100vh; display: flex; align-items: center; padding: 0 6%;
+      padding-top: 68px; position: relative; overflow: hidden; gap: 3rem;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(201,168,76,.07) 0%, transparent 65%),
+                  radial-gradient(ellipse at 80% 80%, rgba(201,168,76,.04) 0%, transparent 50%);
+    }
+    .hero-content { flex: 1; z-index: 1; max-width: 580px; }
+    .hero-eyebrow { font-size: .82rem; letter-spacing: .1em; color: var(--gold); margin-bottom: 1.2rem; font-weight: 600; }
+    .hero-title { font-family: var(--font); font-size: clamp(2.4rem,4.5vw,3.8rem); line-height: 1.2; font-weight: 900; color: #fff; margin-bottom: 1.4rem; }
+    .hero-title span { color: var(--gold); }
+    .hero-desc { color: var(--muted); font-size: 1rem; line-height: 1.85; margin-bottom: 2rem; max-width: 500px; }
+    .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--gold); color: var(--dark); padding: .75rem 1.8rem;
+      border-radius: 2px; font-weight: 700; text-decoration: none; font-size: .9rem;
+      transition: background .2s; font-family: var(--font);
+    }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-outline {
+      border: 1px solid var(--gold); color: var(--gold); padding: .75rem 1.8rem;
+      border-radius: 2px; font-weight: 700; text-decoration: none; font-size: .9rem;
+      transition: .2s; font-family: var(--font);
+    }
+    .btn-outline:hover { background: rgba(201,168,76,.08); }
+    .hero-image { flex: 0 0 380px; z-index: 1; position: relative; }
+    .hero-image img {
+      width: 360px; height: 460px; object-fit: cover; border-radius: 4px;
+      border: 1px solid var(--border); filter: grayscale(15%);
+      box-shadow: 0 40px 80px rgba(0,0,0,.6);
+    }
+    .hero-image::before {
+      content: ''; position: absolute; top: -16px; right: -16px;
+      width: 100%; height: 100%;
+      border: 1px solid rgba(201,168,76,.25); border-radius: 4px;
+    }
+    .scroll-hint { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); font-size: .72rem; color: var(--muted); text-align: center; }
+    .scroll-hint::after { content: ''; display: block; width: 1px; height: 40px; background: var(--gold); margin: .6rem auto 0; animation: scrollPulse 1.8s ease-in-out infinite; }
+    @keyframes scrollPulse { 0%,100%{opacity:.2} 50%{opacity:1} }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 5.5rem 6%; }
+    .section-eyebrow { font-size: .78rem; letter-spacing: .1em; color: var(--gold); margin-bottom: .8rem; font-weight: 600; }
+    .section-title { font-family: var(--font); font-size: clamp(1.8rem,3vw,2.6rem); color: #fff; margin-bottom: 1.2rem; font-weight: 900; }
+    .section-desc { color: var(--muted); max-width: 580px; line-height: 1.85; margin-bottom: 3rem; }
+    .divider { width: 48px; height: 2px; background: var(--gold); margin-bottom: 2rem; }
+
+    /* ─── DEMOS ─── */
+    #demos { background: var(--dark2); }
+    .filter-row { display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: 1.4rem; flex-direction: row-reverse; }
+    .filter-btn {
+      padding: .4rem 1.1rem; border: 1px solid var(--border); border-radius: 2px;
+      background: transparent; color: var(--muted); font-size: .82rem; cursor: pointer;
+      transition: .2s; font-family: var(--font);
+    }
+    .filter-btn.active, .filter-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,.06); }
+    .style-row { display: flex; gap: .6rem; margin-bottom: 2.5rem; flex-wrap: wrap; align-items: center; flex-direction: row-reverse; }
+    .style-label { font-size: .82rem; color: var(--muted); }
+    .demo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap: 1.2rem; }
+    .demo-card {
+      background: var(--dark3); border: 1px solid var(--border); border-radius: 4px;
+      padding: 1.4rem; transition: border-color .2s, transform .2s;
+    }
+    .demo-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+    .demo-tag { display: inline-block; background: rgba(201,168,76,.12); color: var(--gold); font-size: .72rem; padding: .2rem .7rem; border-radius: 2px; margin-bottom: .8rem; font-weight: 600; }
+    .demo-title { font-size: 1.05rem; color: #fff; margin-bottom: .3rem; font-weight: 700; }
+    .demo-desc { font-size: .82rem; color: var(--muted); margin-bottom: 1rem; }
+    audio { width: 100%; height: 36px; }
+    .script-toggle { margin-top: .8rem; background: none; border: none; color: var(--gold); font-size: .8rem; cursor: pointer; padding: 0; text-decoration: underline; text-underline-offset: 3px; font-family: var(--font); }
+    .script-content { display: none; margin-top: .8rem; padding: .8rem; background: var(--dark4); border-right: 2px solid var(--gold); font-size: .85rem; color: var(--muted); line-height: 1.85; border-radius: 2px 0 0 2px; }
+    .script-content.en { direction: ltr; text-align: left; border-right: none; border-left: 2px solid var(--gold); border-radius: 0 2px 2px 0; }
+    .script-content.open { display: block; }
+
+    /* ─── ABOUT ─── */
+    #about { display: flex; gap: 5rem; align-items: center; flex-wrap: wrap; }
+    .about-image { flex: 0 0 320px; position: relative; }
+    .about-image img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 4px; filter: grayscale(10%); }
+    .about-badge {
+      position: absolute; bottom: -1.5rem; left: -1.5rem;
+      background: var(--gold); color: var(--dark);
+      padding: 1rem 1.2rem; text-align: center; border-radius: 2px;
+    }
+    .about-badge strong { display: block; font-size: 1.8rem; font-weight: 900; line-height: 1; }
+    .about-badge span { font-size: .72rem; font-weight: 600; }
+    .about-content { flex: 1; min-width: 280px; }
+    .about-content p { color: var(--muted); line-height: 1.9; margin-bottom: 1rem; }
+    .skills-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.5rem 0; }
+    .chip { padding: .35rem .9rem; border: 1px solid var(--border); border-radius: 2px; font-size: .8rem; color: var(--text); }
+
+    /* ─── SERVICES ─── */
+    #services { background: var(--dark2); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 1.2rem; }
+    .service-card {
+      background: var(--dark3); border: 1px solid var(--border); border-radius: 4px;
+      padding: 1.8rem; transition: .2s;
+    }
+    .service-card:hover { border-color: var(--gold); }
+    .service-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .service-card h3 { font-size: 1.05rem; color: #fff; margin-bottom: .6rem; font-weight: 700; }
+    .service-card p { font-size: .85rem; color: var(--muted); line-height: 1.75; }
+
+    /* ─── STUDIO ─── */
+    #studio { text-align: center; }
+    #studio .section-desc { margin-left: auto; margin-right: auto; }
+    #studio .divider { margin-left: auto; margin-right: auto; }
+    .studio-features { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+    .studio-feat { display: flex; align-items: center; gap: .6rem; padding: .7rem 1.2rem; border: 1px solid var(--border); border-radius: 2px; font-size: .85rem; color: var(--text); }
+    .studio-feat::before { content: '✓'; color: var(--gold); font-weight: 700; }
+    .studio-label { display: inline-block; margin-top: 2rem; background: rgba(201,168,76,.1); color: var(--gold); padding: .5rem 1.4rem; border-radius: 2px; font-size: .8rem; font-weight: 600; }
+
+    /* ─── CONTACT ─── */
+    #contact { display: flex; gap: 5rem; flex-wrap: wrap; align-items: flex-start; }
+    .contact-info { flex: 1; min-width: 260px; }
+    .contact-detail { display: flex; flex-direction: column; margin-bottom: 1.6rem; }
+    .contact-detail strong { font-size: .72rem; color: var(--gold); margin-bottom: .3rem; font-weight: 700; }
+    .contact-detail a, .contact-detail span { color: var(--text); text-decoration: none; font-size: .95rem; }
+    .contact-detail a:hover { color: var(--gold); }
+    .social-links { display: flex; gap: .8rem; margin-top: 1.5rem; }
+    .social-link {
+      width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: .9rem; text-decoration: none; transition: .2s;
+    }
+    .social-link:hover { border-color: var(--gold); color: var(--gold); }
+    .contact-form { flex: 1; min-width: 280px; }
+    .contact-form h3 { font-size: 1.4rem; color: #fff; margin-bottom: 1.4rem; font-weight: 700; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; margin-bottom: 1rem; }
+    .form-group label { font-size: .78rem; color: var(--muted); margin-bottom: .4rem; }
+    .form-group input, .form-group select, .form-group textarea {
+      background: var(--dark3); border: 1px solid var(--border); border-radius: 2px;
+      padding: .75rem 1rem; color: var(--text); font-family: var(--font); font-size: .9rem;
+      transition: border-color .2s; outline: none; text-align: right;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+    .form-group select option { background: var(--dark3); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .btn-submit {
+      width: 100%; background: var(--gold); color: var(--dark); padding: .85rem;
+      border: none; border-radius: 2px; font-weight: 700; font-size: .95rem;
+      cursor: pointer; transition: background .2s; font-family: var(--font);
+    }
+    .btn-submit:hover { background: var(--gold-light); }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--dark2); border-top: 1px solid var(--border); padding: 3.5rem 6% 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
+    .footer-brand p { color: var(--muted); font-size: .85rem; line-height: 1.8; margin-top: .8rem; max-width: 280px; }
+    footer h4 { font-size: .78rem; color: var(--gold); margin-bottom: 1rem; font-weight: 700; }
+    footer ul { list-style: none; }
+    footer ul li { margin-bottom: .5rem; }
+    footer ul li a { color: var(--muted); text-decoration: none; font-size: .85rem; transition: color .2s; }
+    footer ul li a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; text-align: center; font-size: .8rem; color: var(--muted); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      nav { padding: 0 4%; }
+      .nav-links { display: none; }
+      #home { flex-direction: column-reverse; padding-top: 90px; text-align: center; gap: 2rem; }
+      .hero-image { flex: none; }
+      .hero-image img { width: 240px; height: 300px; }
+      .hero-image::before { display: none; }
+      .btn-row { justify-content: center; }
+      #about { flex-direction: column; padding: 3.5rem 5%; gap: 3rem; }
+      .about-image { flex: none; width: 240px; }
+      .about-badge { left: 0; bottom: -1rem; }
+      #contact { flex-direction: column; padding: 3.5rem 5%; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      section { padding: 4rem 5%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-right">
+    <div class="lang-switch">
+      <a href="noha-younis-clone.html">EN</a>
+      <a href="#">ع</a>
+    </div>
+    <a class="nav-cta" href="#contact">وظفني</a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#contact">تواصل معي</a></li>
+    <li><a href="#services">الخدمات</a></li>
+    <li><a href="#about">نبذة عني</a></li>
+    <li><a href="#demos">العينات</a></li>
+    <li><a href="#home">الرئيسية</a></li>
+  </ul>
+  <a class="nav-logo" href="#home">نهى يونس</a>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-image">
+    <img src="https://nohayounis.github.io/Photos/Noha_Photo.jpg" alt="نهى يونس - فنانة تعليق صوتي" />
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">فنانة تعليق صوتي محترفة ثنائية اللغة</p>
+    <h1 class="hero-title">أجعل <span>قصصك</span> تنبض بالحياة</h1>
+    <p class="hero-desc">فنانة تعليق صوتي ثنائية اللغة عربي-إنجليزي أقدم تسجيلات تعبيرية عالية الجودة للإعلانات والسرد والدبلجة وأنظمة الرد الآلي. دع صوتي يكون البصمة الفريدة التي ترتقي بعلامتك التجارية.</p>
+    <div class="btn-row">
+      <a class="btn-primary" href="#demos">استمع للعينات</a>
+      <a class="btn-outline" href="#contact">احصل على عرض سعر</a>
+    </div>
+  </div>
+  <p class="scroll-hint">اسحب للأسفل</p>
+</section>
+
+<!-- DEMOS -->
+<section id="demos">
+  <p class="section-eyebrow">عينات صوتية</p>
+  <h2 class="section-title">استمع لأعمالي</h2>
+  <div class="divider"></div>
+  <p class="section-desc">استكشف مجموعة متنوعة من العينات الصوتية التي تعرض تنوع أدائي عبر أنماط وأنواع مختلفة بالعربية والإنجليزية.</p>
+
+  <div class="filter-row">
+    <button class="filter-btn active">الكل</button>
+    <button class="filter-btn">العربية</button>
+    <button class="filter-btn">الإنجليزية</button>
+  </div>
+  <div class="style-row">
+    <span class="style-label">نوع الصوت:</span>
+    <button class="filter-btn active">مع موسيقى</button>
+    <button class="filter-btn">صوت صافي</button>
+  </div>
+
+  <div class="demo-grid">
+
+    <div class="demo-card">
+      <span class="demo-tag">عربي</span>
+      <h3 class="demo-title">إعلان – تطبيق انجزلي</h3>
+      <p class="demo-desc">صوت إعلاني حيوي ونشيط لتطبيق موبايل</p>
+      <audio controls><source src="" type="audio/mpeg"></audio>
+      <button class="script-toggle" onclick="toggleScript(this)">عرض النص</button>
+      <div class="script-content">إيه رأيك تعمل كل حاجة من موبايلك… من غير زحمة، ومن غير لف ودوران؟ مع أبلكيشن انجزلي، حياتك بقت أسهل بكتير! دلوقتي تقدر تحجز، تطلب، تشتري، وتتابع كل تفاصيل يومك بخطوة واحدة… كل اللي عليك تفتح الأبلكيشن، وتسيب الباقي علينا.</div>
+    </div>
+
+    <div class="demo-card">
+      <span class="demo-tag">عربي</span>
+      <h3 class="demo-title">نظام الرد الآلي – بنك</h3>
+      <p class="demo-desc">نظام رد آلي احترافي بنبرة دافئة وموثوقة</p>
+      <audio controls><source src="" type="audio/mpeg"></audio>
+      <button class="script-toggle" onclick="toggleScript(this)">عرض النص</button>
+      <div class="script-content">مرحبًا بيك في بنك مصر. لخدمتِك بشكل أفضل… من فضلك اختار من القائمة التالية: لخدمات الحسابات الجارية والتوفير… اضغط 1 • لخدمات البطاقات الائتمانية… اضغط 2 • للتحويلات والسداد الإلكتروني… اضغط 3</div>
+    </div>
+
+    <div class="demo-card">
+      <span class="demo-tag">إنجليزي</span>
+      <h3 class="demo-title">نظام رد آلي – خدمة عملاء</h3>
+      <p class="demo-desc">رسائل هاتفية واضحة ومحترفة بالإنجليزية</p>
+      <audio controls><source src="" type="audio/mpeg"></audio>
+      <button class="script-toggle" onclick="toggleScript(this)">عرض النص</button>
+      <div class="script-content en">To ensure our service quality, kindly note that this call might be recorded. For residential, press 1. For commercial or administrative properties, press 2. For re-sale, press 3.</div>
+    </div>
+
+    <div class="demo-card">
+      <span class="demo-tag">عربي</span>
+      <h3 class="demo-title">سرد كتاب صوتي</h3>
+      <p class="demo-desc">سرد قصصي جذاب بأسلوب روائي آسر</p>
+      <audio controls><source src="" type="audio/mpeg"></audio>
+      <button class="script-toggle" onclick="toggleScript(this)">عرض النص</button>
+      <div class="script-content">في عالم يمتلئ بالأسرار، حيث تختبئ الحقيقة خلف طبقات من الغموض… نبدأ رحلة تكشف ما لم يُكشف من قبل. هل نحن مستعدون لمواجهة الأسئلة التي لطالما تجاهلناها؟ هذه… ليست مجرد قصة.</div>
+    </div>
+
+    <div class="demo-card">
+      <span class="demo-tag">عربي</span>
+      <h3 class="demo-title">قصة أطفال</h3>
+      <p class="demo-desc">صوت ممتع وجذاب لبرامج الأطفال</p>
+      <audio controls><source src="" type="audio/mpeg"></audio>
+      <button class="script-toggle" onclick="toggleScript(this)">عرض النص</button>
+      <div class="script-content">في صباح يوم مشمس، استيقظ الأرنب فُلفُل من نومه، وقفز خارج الجحر يبحث عن الجزر الطازج. وبينما هو يقفز بسعادة، سمع صوتًا غريبًا خلف الشجرة...</div>
+    </div>
+
+    <div class="demo-card">
+      <span class="demo-tag">عربي</span>
+      <h3 class="demo-title">سرد وثائقي</h3>
+      <p class="demo-desc">سرد احترافي للأفلام الوثائقية والفيديوهات المؤسسية</p>
+      <audio controls><source src="" type="audio/mpeg"></audio>
+      <button class="script-toggle" onclick="toggleScript(this)">عرض النص</button>
+      <div class="script-content">في عصر تسارعت فيه الابتكارات، لم تعد التكنولوجيا مجرد أدوات، بل أصبحت رفيقًا يوميًا يشكّل طريقة عيشنا. من الذكاء الاصطناعي إلى علوم الفضاء، تتوسع حدود المعرفة.</div>
+    </div>
+
+    <div class="demo-card">
+      <span class="demo-tag">عربي</span>
+      <h3 class="demo-title">دبلجة شخصيات</h3>
+      <p class="demo-desc">صوت شخصية معبر بعمق عاطفي</p>
+      <audio controls><source src="" type="audio/mpeg"></audio>
+      <button class="script-toggle" onclick="toggleScript(this)">عرض النص</button>
+      <div class="script-content">صراحة؟ النهارده كان يوم بايخ بمعنى الكلمة. صحيت متأخر، واتفاجئت إن الميّه قاطعة. نزلت الشارع، لقيت الميكروباص معدّي قدامي وأنا لسه بلبس السماعة.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-content">
+    <p class="section-eyebrow">نبذة عني</p>
+    <h2 class="section-title">مرحباً، أنا نهى يونس</h2>
+    <div class="divider"></div>
+    <p>أنا فنانة تعليق صوتي ثنائية اللغة عربي-إنجليزي، أقدم تسجيلات تعبيرية عالية الجودة للإعلانات والسرد والدبلجة وأنظمة الرد الآلي. أجمع بين الإلقاء الواضح والعمق العاطفي والإنتاج الصوتي الاحترافي لأمنح كل نص بصمة صوتية فريدة ترتقي بالعلامة التجارية.</p>
+    <p>بفضل التواصل الفعال والالتزام بالمواعيد والقدرة على تفسير النصوص الإبداعية والمؤسسية، أجعل عملية التسجيل سلسة وممتعة — مساعدةً العملاء على تحقيق الرسالة والنبرة التي يتصورونها.</p>
+    <p>إذا كنت تبحث عن صوت أنثوي متنوع بحضور راقٍ ومميز، سأكون سعيدة بإحياء مشروعك.</p>
+    <div class="skills-chips">
+      <span class="chip">إعلانات</span>
+      <span class="chip">كتب صوتية</span>
+      <span class="chip">أنظمة IVR</span>
+      <span class="chip">دبلجة</span>
+      <span class="chip">تعليم إلكتروني</span>
+      <span class="chip">فيديوهات مؤسسية</span>
+    </div>
+    <a class="btn-primary" href="#contact">لنعمل معاً</a>
+  </div>
+  <div class="about-image">
+    <img src="https://nohayounis.github.io/Photos/Noha_Photo.jpg" alt="نهى يونس" />
+    <div class="about-badge">
+      <strong>+1</strong>
+      <span>سنة خبرة</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <p class="section-eyebrow">ما أقدمه</p>
+  <h2 class="section-title">خدمات التعليق الصوتي الاحترافية</h2>
+  <div class="divider"></div>
+  <p class="section-desc">من الإعلانات التلفزيونية إلى سرد الكتب الصوتية، أقدم تسجيلات صوتية عالية الجودة مصممة خصيصاً لاحتياجاتك بالعربية والإنجليزية.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">📺</div>
+      <h3>إعلانات التلفزيون والراديو</h3>
+      <p>أداء صوتي جذاب يلفت الانتباه ويحقق نتائج فعالة لحملاتك الإعلانية.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📖</div>
+      <h3>سرد الكتب الصوتية</h3>
+      <p>سرد قصصي جذاب يبث الحياة في الشخصيات والروايات للمستمعين حول العالم.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📞</div>
+      <h3>أنظمة الرد الآلي IVR</h3>
+      <p>رسائل صوتية واضحة ومحترفة تحسن تجربة عملائك عبر الهاتف.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎬</div>
+      <h3>الدبلجة والرسوم المتحركة</h3>
+      <p>أصوات شخصيات ودبلجة تبث الحياة في القصص المتحركة والمحتوى المرئي.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎓</div>
+      <h3>التعليم الإلكتروني والتدريب</h3>
+      <p>سرد واضح ومفصل يجعل المحتوى التعليمي جذاباً وسهل الفهم.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏢</div>
+      <h3>الفيديوهات المؤسسية</h3>
+      <p>تعليق صوتي احترافي للعروض التقديمية والفيديوهات الترويجية والاتصالات الداخلية.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO -->
+<section id="studio">
+  <p class="section-eyebrow">جودة التسجيل</p>
+  <h2 class="section-title">تسجيل في استوديوهات احترافية</h2>
+  <div class="divider"></div>
+  <p class="section-desc">أسجل جميع أعمال التعليق الصوتي في استوديوهات مجهزة بالكامل، مما يضمن جودة صوت بمعايير البث الإذاعي تلبي أعلى معايير الصناعة. العمل مع مهندسي صوت خبراء ومعدات متطورة يضمن تسجيلات نقية وصوتيات مثالية.</p>
+  <div class="studio-features">
+    <div class="studio-feat">جودة صوت بمعايير البث</div>
+    <div class="studio-feat">هندسة صوتية احترافية</div>
+    <div class="studio-feat">معدات متطورة</div>
+    <div class="studio-feat">استوديوهات معالجة صوتياً</div>
+    <div class="studio-feat">سرعة في التسليم</div>
+    <div class="studio-feat">تسليم بصيغ متعددة</div>
+  </div>
+  <div><span class="studio-label">استوديو احترافي</span></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-form">
+    <h3>اطلب عرض سعر</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label>اسمك</label>
+        <input type="text" placeholder="اسمك" />
+      </div>
+      <div class="form-group">
+        <label>البريد الإلكتروني</label>
+        <input type="email" placeholder="البريد الإلكتروني" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label>رقم الهاتف (اختياري)</label>
+      <input type="tel" placeholder="رقم الهاتف" />
+    </div>
+    <div class="form-group">
+      <label>نوع المشروع</label>
+      <select>
+        <option value="">اختر نوع المشروع</option>
+        <option>إعلان تلفزيوني/راديو</option>
+        <option>كتاب صوتي</option>
+        <option>نظام رد آلي IVR</option>
+        <option>دبلجة</option>
+        <option>تعليم إلكتروني</option>
+        <option>فيديو مؤسسي</option>
+        <option>أخرى</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>تفاصيل المشروع</label>
+      <textarea placeholder="أخبرني عن مشروعك…"></textarea>
+    </div>
+    <button class="btn-submit">إرسال الرسالة</button>
+  </div>
+
+  <div class="contact-info">
+    <p class="section-eyebrow">تواصل معي</p>
+    <h2 class="section-title">لنصنع شيئاً رائعاً معاً</h2>
+    <div class="divider"></div>
+    <p style="color:var(--muted);line-height:1.85;margin-bottom:2rem;">هل أنت مستعد لإحياء مشروعك؟ سواء كنت تحتاج عرض سعر سريع أو ترغب في مناقشة مشروع معقد، أنا هنا للمساعدة. تواصل معي ولنحول رؤيتك إلى واقع.</p>
+    <div class="contact-detail">
+      <strong>البريد الإلكتروني</strong>
+      <a href="mailto:nohayounis1681@gmail.com">nohayounis1681@gmail.com</a>
+    </div>
+    <div class="contact-detail">
+      <strong>الهاتف</strong>
+      <a href="tel:+201021027944">(+20) 102 102 7944</a>
+    </div>
+    <div class="contact-detail">
+      <strong>الموقع</strong>
+      <span>القاهرة، مصر</span>
+    </div>
+    <div class="social-links">
+      <a class="social-link" href="https://www.linkedin.com/in/noha-younis-voice-over/" target="_blank">in</a>
+      <a class="social-link" href="https://www.facebook.com/profile.php?id=100071080595580" target="_blank">f</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="nav-logo" href="#home">نهى يونس</a>
+      <p>فنانة تعليق صوتي ثنائية اللغة عربي-إنجليزي أبث الحياة في قصصك بدفء وأصالة.</p>
+    </div>
+    <div>
+      <h4>روابط سريعة</h4>
+      <ul>
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#demos">العينات</a></li>
+        <li><a href="#about">نبذة عني</a></li>
+        <li><a href="#services">الخدمات</a></li>
+        <li><a href="#contact">تواصل معي</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>الخدمات</h4>
+      <ul>
+        <li><a href="#services">إعلانات</a></li>
+        <li><a href="#services">كتب صوتية</a></li>
+        <li><a href="#services">أنظمة IVR</a></li>
+        <li><a href="#services">دبلجة</a></li>
+        <li><a href="#services">تعليم إلكتروني</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 نهى يونس. جميع الحقوق محفوظة.</div>
+</footer>
+
+<script>
+  function toggleScript(btn) {
+    const box = btn.nextElementSibling;
+    box.classList.toggle('open');
+    btn.textContent = box.classList.contains('open') ? 'إخفاء النص' : 'عرض النص';
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const parent = this.parentElement;
+      parent.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
+    });
+  });
+</script>
+</body>
+</html>
