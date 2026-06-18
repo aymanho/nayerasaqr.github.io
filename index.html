@@ -6,8 +6,13 @@
   <title>Nayera Sakr | Professional Bilingual Voice Over Artist</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link href="https://nohayounis.github.io/styles.css" rel="stylesheet" />
-  <style></style>
   <style>
+        .animate-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
+  <!-- <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -304,46 +309,87 @@ nav {
   padding-left: clamp(20px, 5vw, 80px) !important;
   padding-right: clamp(20px, 5vw, 80px) !important;
 }
-  </style>
+  </style> -->
+  <style type="text/css" id="ctre_styles">
+			#ctre_wnd {
+				position: fixed; bottom: 0; right: 10px;
+				background: #fff; box-shadow: 0px 0px 40px rgba(0,0,0,0.15);
+				border-radius: 3px 3px 0 0;
+				z-index: 2147483647;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				#ctre_wnd { background: #000; box-shadow: 0px 0px 40px rgba(255,255,255,0.15); }
+			}
+			</style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"/>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="#home">Nayera Sakr</a>
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#demos">Demos</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div style="display:flex;align-items:center;gap:1rem;">
-    <div class="lang-switch">
-      <a href="index.html">EN</a>
-      <a href="index-ar.html">ع</a>
+<div class="language-toggle">
+        <a href="index.html" class="lang-btn active" title="English">EN</a>
+        <a href="index-ar.html" class="lang-btn" title="العربية">ع</a>
     </div>
-    <a class="nav-cta" href="#contact">Hire Me</a>
-  </div>
-</nav>
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-text">Nayera</span>
+                <span class="logo-accent">Sakr</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#demos" class="nav-link">Demos</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Hire Me</a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
 <!-- HERO -->
-<section id="home">
-  <div class="hero-bg"></div>
+<section id="home" class="hero">
+  <div class="hero-bg-pattern"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Professional Bilingual Voice Over Artist</p>
+   <div class="hero-text"> <p class="hero-subtitle">Professional Bilingual Voice Over Artist</p>
     <h1 class="hero-title">Words inform. Voice inspires.</h1>
-    <p class="hero-desc">Professional Arabic and English voice-over artist, expert in giving life, personality, and emotion to every script. From commercials and audiobook narration to dubbing and IVR.</p>
-    <div class="btn-row">
-      <a class="btn-primary" href="#demos">Listen to Demos</a>
-      <a class="btn-outline" href="#contact">Get a Quote</a>
-    </div>
+    <p class="hero-description">Professional Arabic and English voice-over artist, expert in giving life, personality, and emotion to every script. From commercials and audiobook narration to dubbing and IVR.</p>
+<div class="hero-cta">
+                    <a href="#demos" class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        Listen to Demos
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">Get a Quote</a>
+                </div>
+    
+   </div>
+   <div class="hero-visual" style="transform: translateY(0px);">
+                <div class="hero-image-container">
+                    <div class="hero-image-wrapper">
+                        <img src="Nayera.jpg" alt="Nayera Sakr" class="hero-photo">
+                    </div>
+                    <div class="sound-wave">
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                    </div>
+                </div>
+            </div>
   </div>
-  <div class="hero-image">
-    <img src="https://nohayounis.github.io/Photos/Noha_Photo.jpg" alt="Nayera Sakr - Voice Over Artist" />
-  </div>
-  <p class="scroll-hint">Scroll Down</p>
+  
+  <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="mouse-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
 </section>
 
 <!-- DEMOS -->
