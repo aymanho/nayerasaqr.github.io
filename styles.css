@@ -219,7 +219,7 @@ img {
 }
 
 .navbar.scrolled {
-    background: rgba(13, 79, 79, 0.95);
+    background: #500606;
     backdrop-filter: blur(10px);
     padding: 15px 0;
     box-shadow: var(--shadow-md);
@@ -316,7 +316,7 @@ img {
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    background: var(--gradient-hero);
+    background: #500606;
     position: relative;
     display: flex;
     align-items: center;
@@ -520,12 +520,12 @@ img {
 }
 
 .filter-btn:hover {
-    border-color: var(--primary);
+    border-color: #500606;
     color: var(--primary);
 }
 
 .filter-btn.active {
-    background: var(--gradient-primary);
+    background: #500606;
     color: var(--white);
     border-color: transparent;
 }
@@ -611,7 +611,7 @@ img {
 .demo-icon {
     width: 60px;
     height: 60px;
-    background: var(--gradient-primary);
+    background: #500606;
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -653,8 +653,8 @@ img {
 }
 
 .demo-lang-badge.arabic {
-    background: rgba(20, 125, 125, 0.1);
-    color: var(--primary);
+    background: rgba(212, 164, 24, 0.1);
+    color: var(--accent-dark);
 }
 
 .demo-lang-badge.english {
@@ -868,12 +868,12 @@ img {
 }
 
 .about-text.highlight {
-    color: var(--primary);
+    color: #500606;
     font-weight: 500;
     padding: 15px 20px;
-    background: rgba(20, 125, 125, 0.05);
+    background: #5006060d;
     border-radius: 10px;
-    border-left: 4px solid var(--primary);
+    border-left: 4px solid #500606;
 }
 
 .skills-grid {
@@ -896,14 +896,14 @@ img {
 }
 
 .skill-item i {
-    color: var(--primary);
+    color: #500606;
     font-size: 18px;
 }
 
 /* Services Section */
 .services {
     padding: var(--section-padding);
-    background: var(--gradient-hero);
+    background: #500606;
 }
 
 .services .section-tag,
@@ -1010,7 +1010,7 @@ img {
 
 .studio-feature i {
     font-size: 20px;
-    color: var(--primary);
+    color: #500606;
 }
 
 .studio-feature span {
@@ -1048,7 +1048,7 @@ img {
     transform: translate(-50%, -50%);
     width: 200px;
     height: 200px;
-    background: var(--gradient-primary);
+    background: #500606;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1118,7 +1118,7 @@ img {
 .contact-icon {
     width: 55px;
     height: 55px;
-    background: var(--gradient-primary);
+    background: #500606;
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -1258,7 +1258,7 @@ img {
 
 /* Footer */
 .footer {
-    background: var(--dark);
+    background: #500606;
     padding: 80px 0 30px;
 }
 
